@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  finder:
+    build: .
+    encrypted_env_file: release.env.encrypted
+    cache: true

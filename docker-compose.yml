@@ -3,5 +3,3 @@ version: '2'
 services:
   finder:
     build: .
-    volumes:
-      - .:/go/src/github.com/minodisk/nvim-finder-rplugin
