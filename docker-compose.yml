@@ -3,3 +3,4 @@ version: '2'
 services:
   finder:
     build: .
+    command: ./bin/nvim-finder_linux_amd64 keymap keymap.vim && cat keymap.vim

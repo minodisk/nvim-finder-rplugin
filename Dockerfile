@@ -9,3 +9,4 @@ RUN apk --update add git && \
 WORKDIR /go/src/github.com/minodisk/nvim-finder-rplugin
 COPY . .
 RUN dep ensure && dep status
+RUN sh build.sh
