@@ -1,0 +1,64 @@
+{
+    "memo": "fbe2db90a0f7327ef110999629f7eefb95fba5298ac07301e01c2e9417757a0d",
+    "projects": [
+        {
+            "name": "github.com/mattn/natural",
+            "branch": "master",
+            "revision": "6b2ca5c8eb9a3bbc5a04c30324d87879a92067e9",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/minodisk/go-caseconv",
+            "branch": "master",
+            "revision": "d30557befec39079e0165431aebc602e37a6c719",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/minodisk/go-nvim",
+            "branch": "master",
+            "revision": "b9c100d07c2fcf1c692c3ce47f5076e53467a95c",
+            "packages": [
+                "buffer",
+                "nvim",
+                "window"
+            ]
+        },
+        {
+            "name": "github.com/minodisk/go-tree",
+            "branch": "master",
+            "revision": "22fd55883132b2f51764c1c1edd07b71d0b8d771",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/neovim/go-client",
+            "branch": "master",
+            "revision": "b4d0001757af5980b20bf246e900b9b0976a0a00",
+            "packages": [
+                "nvim",
+                "nvim/plugin"
+            ]
+        },
+        {
+            "name": "github.com/skratchdot/open-golang",
+            "branch": "master",
+            "revision": "75fb7ed4208cf72d323d7d02fd1a5964a7a9073c",
+            "packages": [
+                "open"
+            ]
+        },
+        {
+            "name": "github.com/termie/go-shutil",
+            "branch": "master",
+            "revision": "bcacb06fecaeec8dc42af03c87c6949f4a05c74c",
+            "packages": [
+                "."
+            ]
+        }
+    ]
+}
