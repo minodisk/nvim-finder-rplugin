@@ -3,4 +3,6 @@ version: '2'
 services:
   finder:
     build: .
-    command: ./bin/nvim-finder_linux_amd64 keymap keymap.vim && cat keymap.vim
+    volumes:
+      - ./bin:/go/src/github.com/minodisk/nvim-finder-rplugin/bin
+    command: sh build.sh

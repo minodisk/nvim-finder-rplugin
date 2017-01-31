@@ -1,7 +1,6 @@
-FROM golang:1.7-alpine
+FROM golang:1.7-wheezy
 
-RUN apk --update add git && \
-    go get -u \
+RUN go get -u \
       github.com/golang/dep/... \
       github.com/mitchellh/gox \
       github.com/tcnksm/ghr
