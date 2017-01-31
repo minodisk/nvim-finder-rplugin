@@ -1,6 +1,6 @@
-- name: build
+- name: test
   service: finder
-  command: echo ''
+  command: go test .
 - name: release
   tag: release
   service: finder
