@@ -1,2 +1,5 @@
-mkdir -p ./bin && \
-gox -arch="amd64" -output="./bin/nvim-finder_{{.OS}}_{{.Arch}}" .
+mkdir -p ./bin
+OS='darwin freebsd linux netbsd openbsd windows'
+for os in $OS; do
+  CGO_ENABLED=0 GOOS=$os go build -o ./bin/nvim-finder_${os}_amd64 .
+done
