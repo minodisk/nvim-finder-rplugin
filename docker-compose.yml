@@ -1,8 +1,9 @@
 version: '2'
 
 services:
+
   finder:
     build: .
     volumes:
-      - ./bin:/go/src/github.com/minodisk/nvim-finder-rplugin/bin
+      - .:/go/src/github.com/minodisk/nvim-finder-rplugin
     command: sh build.sh

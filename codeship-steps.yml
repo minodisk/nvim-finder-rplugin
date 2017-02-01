@@ -1,7 +1,7 @@
 - name: build
   service: finder
-  command: echo ''
+  command: sh build.sh
 - name: release
   tag: release
   service: finder
-  command: sh release.sh
+  command: sh build.sh && sh release.sh
