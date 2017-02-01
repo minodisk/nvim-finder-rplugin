@@ -4,4 +4,4 @@
 - name: release
   tag: release
   service: finder
-  command: sh build.sh && sh release.sh
+  command: sh release.sh
