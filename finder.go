@@ -333,15 +333,7 @@ func (f *Finder) CreateFile() error {
 }
 
 func (f *Finder) Rename() error {
-	return f.tree.Rename(f.Cursor, func(o tree.Operator) (string, error) {
-		return f.nvim.InputString(fmt.Sprintf("Rename the %s '%s' to", tree.Type(o), o.Name()), o.Name(), nvim.CompletionNone)
-	}, func(os tree.Operators) ([]string, error) {
-		names := make([]string, len(os))
-		for i, o := range os {
-			names[i] = o.Name()
-		}
-		return f.nvim.InputStrings("Rename the objects to", names, nvim.CompletionNone)
-	}, func() error {
+	return f.tree.Rename(f.Cursor, f.renameOne, f.renameSome, func() error {
 		return f.nvim.Printf("Renaming has been canceled.\n")
 	}, f.Render)
 }
@@ -417,9 +409,34 @@ func (f *Finder) CopiedList() error {
 }
 
 func (f *Finder) Paste() error {
-	return f.tree.Paste(f.Cursor, f.Render)
+	return f.tree.Paste(f.Cursor, func(tcs []string) (string, error) {
+		ncs := make(nvim.Choices, len(tcs))
+		for i, tc := range tcs {
+			ncs[i] = nvim.Choice{
+				Shortcut:    tc[0],
+				Description: tc,
+			}
+		}
+		c, err := f.nvim.Confirm("Since there is a file of the same name, choose action to do", ncs)
+		if err != nil {
+			return "", err
+		}
+		return c.Description, nil
+	}, f.renameOne, f.Render)
 }
 
 func (f *Finder) Yank() error {
 	return f.tree.Yank(f.Cursor, f.RegisterYank)
+}
+
+func (f *Finder) renameOne(o tree.Operator) (string, error) {
+	return f.nvim.InputString(fmt.Sprintf("Rename the %s '%s' to", tree.Type(o), o.Name()), o.Name(), nvim.CompletionNone)
+}
+
+func (f *Finder) renameSome(os tree.Operators) ([]string, error) {
+	names := make([]string, len(os))
+	for i, o := range os {
+		names[i] = o.Name()
+	}
+	return f.nvim.InputStrings("Rename the objects to", names, nvim.CompletionNone)
 }
