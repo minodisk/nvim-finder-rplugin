@@ -20,7 +20,7 @@
         {
             "name": "github.com/minodisk/go-nvim",
             "branch": "master",
-            "revision": "b9c100d07c2fcf1c692c3ce47f5076e53467a95c",
+            "revision": "bc0ec6df96e305007c2d754e4f40ed556be2e76b",
             "packages": [
                 "buffer",
                 "nvim",
@@ -30,7 +30,7 @@
         {
             "name": "github.com/minodisk/go-tree",
             "branch": "master",
-            "revision": "22fd55883132b2f51764c1c1edd07b71d0b8d771",
+            "revision": "4359fe8378dbd0dece75189226f653e5479054a6",
             "packages": [
                 "."
             ]
